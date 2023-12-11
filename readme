@@ -1,0 +1,13 @@
+Enerji tasarrufu amacı ile GPO üzerindeki güç tasarrufu seçenekleri ile bilgisayarlarınızın belirli bir süre içerisinde kullanılmaması durumunda uyku moduna alma, monitörü kapatma gibi seçenekleri kullanabilirsiniz. 
+Ancak uzak ofis veya şube gibi gece herhangi bir şekilde kullanılmayan bilgisayarların açık kalması gerçekten gereksiz bir enerji sarfiyatı olacaktır.
+
+Bunun engellemek için bir bat dosyası yapabilirsiniz, ancak çok fazla sayıda bilgisayarınız var ise bu bat dosyasını bu bilgisayarlar için zamanlamak gerçekten zor olacaktır.
+
+Bunun kolay bir yolu ise aşağıdaki gibi bir komut seti ile bir bat dosyası yapmak ve bunu GPO ile logon script olarak kullanıcılara dağıtmak.
+
+Bu script bir kullanıcı hesabı yardımı ile ( domain user olması yeterli, ancak bilgisayarları kapatma yetkisine sahip olmalı, bunuda GPO dan bu bat dosyasını uygulayacağınız makinelerin olduğu OU üzerine uygulayacağınız bir GPO ile belirleyebilirsiniz,
+veya kolay yolu yönetici hesabına sahip bir hesap kullanın ancak şifre açık bir şekilde görüldüğü için bunu tavsiye etmiyorum. ) bilgisayarı kapatacaktır.
+
+
+Bu bat bir kez çalışması yeterli olup bat çalıştığı bilgisayarda bu kullanıcı yetkisi ile bir zamanlanmış görev tanımlayacaktır. Bu görev ise artık her akşam 21:00 da bu bilgisayarı kapatacaktır.
+
